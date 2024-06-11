@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+            height: 100vh;
+            width: 100vw;
+            /* min-height: 1300px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .card{
+            height: 520px;
+            width: 360px;
+            background-color: white;
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .card img{
+            height: 57%;
+            width: 320px;
+            /* margin: 20px; */
+            /* padding: 20px; */
+            border-radius: 10px;
+        }
+
+        .card h2{
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .card p{
+            font-size: 1.3rem;
+        }
+
+
+
+
+
+        /* 2nd card style */
+        .container1{
+            background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+            height: 100vh;
+            width: 100vw;
+            /* min-height: 1300px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card1{
+            width: 400px;
+            height: 600px;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            
+        }
+
+        .card1 img{
+            width: 100%;
+            height: 30%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+    
+        }
+
+        .textbox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* padding: 20px; */
+            width: 75%;
+            text-align: center;
+
+        }
+
+        #Amountbox{
+            width: 80%;
+            /* height: 10%; */
+            background-color: rgb(147, 172, 201);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20px;
+            padding-left: 20px;
+
+        }
+        
+        @media (max-width:400px){
+            #Amountbox{
+                flex-direction: column;
+            }
+        }
+
+        .leftbox{
+            /* width: fit-content; */
+            display: flex;
+            gap: 15px;
+            height: 100%;
+            align-items: center;
+        }
+
+        .imgbox img{
+        height: 3.5rem;
+        width: 3.5rem;
+       }
+        
+        .rightbox{
+
+        }
+
+    #paymentbutton{
+        width: 80%;
+        height: 9%;
+        background-color: rgb(37, 37, 102);
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+       #cancelbox a{
+
+        text-decoration: none;
+        font-weight: bold;
+        color: rgb(46, 43, 43);
+        font-size: large;
+
+       } 
+
+       /* 3rd Box */
+
+       .conatiner2{
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+
+       .card2{
+        width: 700px;
+        height: 350px;
+        display: flex;
+        flex-direction: row;
+        background-color: aquamarine;
+       }
+       
+       .leftbox1{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        background-color: #4c2c60;
+       }
+
+       .leftbox1 h2{
+        font-weight: bold;
+        color: white;
+        font-size: 2rem;
+       }
+
+       .leftbox1 p{
+        color: white;
+       }
+       .mixbox{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        
+       }
+
+       .digit{
+        font-size: 2rem;
+       }
+
+       .rightbox1 img{
+        height: 350px;
+        width: 350px;
+       }
+
+    </style>
+</head>
+<body>
+    <!-- 1st card -->
+    <div class="container">
+        <div class="card">
+         <img src="data:image/png;base64,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" alt="qrcode">
+ 
+         <!-- upar me copy paste krne se itna code likha hua hai -->
+ 
+             <h2>Improve your front end skills buy developing projects</h2>
+         
+             <p>Scan the QR Code to visit Front End men or and take your coding sjkill to next level</p>
+        </div> 
+     </div>
+ 
+ 
+ 
+ 
+ <!-- 2nd card -->
+     <div class="container1">
+         <div class="card1">
+             <img src="https://t4.ftcdn.net/jpg/07/51/17/99/240_F_751179942_eQlOuCVj5UNIufcDpnS8ZHEyerJDmRmI.jpg" alt="books">
+              
+             <div class="textbox">
+             <h2>Order Summary</h2>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aut odio, dolorem praesentium voluptatibus animi perspiciatis quas officia laudantium modi.</p>
+         </div>
+             
+         <div id="Amountbox">
+             <div class="leftbox">
+                 <div class="imgbox">
+                     <img src="https://static.vecteezy.com/system/resources/previews/009/428/325/non_2x/3d-social-media-icons-music-free-png.png" alt="music-icon">
+                 </div>
+ 
+                 <div id="textAmountbox">
+                     <p>Amount</p>
+                     <p>$99.9/year</p>
+                 </div>
+             </div>
+             <div class="rightbox">
+                 <a href="#">Change</a>
+             </div>
+         </div>
+ 
+         
+         <button id="paymentbutton">
+             Proceed to Payment
+         </button>
+ 
+         <div id="cancelbox">
+             <a href="#">Cancel Order</a>
+         </div>
+ 
+         </div>
+     </div>
+ 
+ 
+ 
+     <!-- 3rd Box -->
+     <div class="conatiner2">
+             <div class="card2">
+                 <div class="leftbox1">
+                     <h2>Get insight that help your business grow</h2>
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus porro dolore officia rerum cumque saepe accusantium exercitationem, voluptates excepturi sit aspernatur ea voluptatum magnam veniam. Lorem ipsum dolor sit amet.</p>
+ 
+                     <div class="mixbox">
+                     <div class="startbox">
+                         <p class="digit">10K+</p>
+                         <p>Comments</p>
+                     </div>
+                     <div class="sndbox">
+                         <p class="digit">214</p>
+                         <p>Paid Users</p>
+                     </div>
+                     <div class="thrdbox">
+                         <p class="digit">12M+</p>
+                         <p>Views</p>
+                     </div>
+                 </div>
+                     
+                 </div>
+                 <div class="rightbox1">
+                     <img src="https://t4.ftcdn.net/jpg/07/51/17/99/240_F_751179942_eQlOuCVj5UNIufcDpnS8ZHEyerJDmRmI.jpg" alt="">
+                 </div>
+             </div>
+     </div>
+    
+</body>
+</html>
